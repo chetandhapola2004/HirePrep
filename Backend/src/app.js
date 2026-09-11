@@ -10,12 +10,14 @@ const allowedOrigins = [
     process.env.FRONTEND_URL
 ].filter(Boolean)
 
+const vercelPreviewOriginPattern = /^https:\/\/hireprepfrontend-[a-z0-9-]+\.vercel\.app$/
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
     origin(origin, callback) {
         // Requests from tools such as Postman do not send an Origin header.
-        if (!origin || allowedOrigins.includes(origin)) {
+        if (!origin || allowedOrigins.includes(origin) || vercelPreviewOriginPattern.test(origin)) {
             return callback(null, true)
         }
 
