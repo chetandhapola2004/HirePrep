@@ -145,119 +145,54 @@ body {
   display: inline-block;
 }
 
-/* AI Generation Loading Pulse Screen */
-.ai-loading-container {
+/* Circular Loading Screen matching website theme */
+.brand-loader-container {
   min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 2rem;
   background-color: var(--bg-primary);
-  background-image: radial-gradient(circle at 50% 50%, rgba(255, 45, 120, 0.12), transparent 65%);
+  box-sizing: border-box;
 }
 
-.ai-orb-wrapper {
-  position: relative;
-  width: 140px;
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ai-orb {
-  width: 80px;
-  height: 80px;
+.brand-spinner {
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  background: var(--primary-gradient);
-  box-shadow: 0 0 50px rgba(255, 45, 120, 0.6);
-  animation: pulse-orb 2.5s infinite ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  border: 3.5px solid rgba(255, 45, 120, 0.15);
+  border-top-color: #ff2d78;
+  border-right-color: #ff2d78;
+  animation: brand-spin 0.75s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-.ai-orb-ring {
-  position: absolute;
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  border: 2px dashed rgba(255, 45, 120, 0.4);
-  animation: spin-ring 10s linear infinite;
-}
-
-.ai-orb-ring--reverse {
-  position: absolute;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  border: 2px dashed rgba(168, 85, 247, 0.4);
-  animation: spin-ring-reverse 7s linear infinite;
-}
-
-@keyframes pulse-orb {
-  0%, 100% {
-    transform: scale(0.92);
-    box-shadow: 0 0 35px rgba(255, 45, 120, 0.4);
-  }
-  50% {
-    transform: scale(1.08);
-    box-shadow: 0 0 65px rgba(255, 45, 120, 0.8), 0 0 100px rgba(168, 85, 247, 0.5);
-  }
-}
-
-@keyframes spin-ring {
+@keyframes brand-spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-@keyframes spin-ring-reverse {
-  0% { transform: rotate(360deg); }
-  100% { transform: rotate(0deg); }
-}
-
-.ai-loading-text {
+.brand-loader-text {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
-.ai-loading-text h2 {
-  font-size: 1.5rem;
+.brand-loader-text h2 {
+  font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: var(--text-primary);
 }
 
-.ai-loading-text p {
+.brand-loader-text p {
   color: var(--text-secondary);
-  font-size: 0.925rem;
-  max-width: 460px;
+  font-size: 0.9rem;
+  max-width: 440px;
+  line-height: 1.5;
 }
 
-.ai-progress-steps {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-top: 0.5rem;
-}
-
-.ai-progress-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--border-card);
-  transition: all 0.3s ease;
-}
-
-.ai-progress-dot.active {
-  background-color: var(--primary);
-  box-shadow: 0 0 10px var(--primary);
-  transform: scale(1.3);
-}

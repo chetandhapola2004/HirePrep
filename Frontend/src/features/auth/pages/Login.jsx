@@ -31,21 +31,8 @@ const Login = () => {
 
     if (loading) {
         return (
-            <main className='ai-loading-container'>
-                <div className='ai-orb-wrapper'>
-                    <div className='ai-orb-ring' />
-                    <div className='ai-orb'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                            <path d="M2 17l10 5 10-5" />
-                            <path d="M2 12l10 5 10-5" />
-                        </svg>
-                    </div>
-                </div>
-                <div className='ai-loading-text'>
-                    <h2>Loading Account</h2>
-                    <p>Securing session credentials...</p>
-                </div>
+            <main className='brand-loader-container'>
+                <div className='brand-spinner' />
             </main>
         )
     }

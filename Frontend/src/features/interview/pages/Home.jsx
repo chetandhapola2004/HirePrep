@@ -157,27 +157,11 @@ const Home = () => {
 
     if (loading) {
         return (
-            <main className='ai-loading-container'>
-                <div className='ai-orb-wrapper'>
-                    <div className='ai-orb-ring' />
-                    <div className='ai-orb-ring ai-orb-ring--reverse' />
-                    <div className='ai-orb'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M12 3l7 7-7 7-7-7 7-7z" />
-                            <path d="M3 14l7 7 7-7" />
-                            <path d="M14 3l7 7" />
-                        </svg>
-                    </div>
-                </div>
-
-                <div className='ai-loading-text'>
+            <main className='brand-loader-container'>
+                <div className='brand-spinner' />
+                <div className='brand-loader-text'>
                     <h2>Generating Your Interview Strategy</h2>
                     <p>{LOADING_MESSAGES[loadingStep]}</p>
-                    <div className='ai-progress-steps'>
-                        {LOADING_MESSAGES.map((_, i) => (
-                            <span key={i} className={`ai-progress-dot ${i === loadingStep ? 'active' : ''}`} />
-                        ))}
-                    </div>
                 </div>
             </main>
         )
