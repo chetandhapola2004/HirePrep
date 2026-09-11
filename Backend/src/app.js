@@ -5,6 +5,7 @@ const cors = require("cors")
 const app = express()
 
 const allowedOrigins = [
+    "http://localhost:5173",
     "https://hireprepfrontend.vercel.app",
     process.env.FRONTEND_URL
 ].filter(Boolean)
