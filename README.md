@@ -364,7 +364,3 @@ The AI engine in `Backend/src/services/ai.service.js` employs several optimizati
 3. Add the `VITE_API_URL` environment variable pointing to your deployed backend URL.
 
 ---
-
-## License
-
-This project is licensed under the ISC License. See the package configuration for details.
