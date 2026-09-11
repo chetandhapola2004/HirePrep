@@ -4,10 +4,22 @@ const cors = require("cors")
 
 const app = express()
 
+const allowedOrigins = [
+    "http://localhost:5173",
+    process.env.FRONTEND_URL
+].filter(Boolean)
+
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin(origin, callback) {
+        // Requests from tools such as Postman do not send an Origin header.
+        if (!origin || allowedOrigins.includes(origin)) {
+            return callback(null, true)
+        }
+
+        return callback(new Error("Origin is not allowed by CORS"))
+    },
     credentials: true
 }))
 
