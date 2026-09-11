@@ -23,6 +23,14 @@ app.use(cors({
     credentials: true
 }))
 
+app.get("/", (req, res) => {
+    res.status(200).json({ message: "HirePrep backend is running" })
+})
+
+app.get("/api/health", (req, res) => {
+    res.status(200).json({ status: "ok" })
+})
+
 /* require all the routes here */
 const authRouter = require("./routes/auth.routes")
 const interviewRouter = require("./routes/interview.routes")
